@@ -3,13 +3,13 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UserService } from './user.service';
 import { User } from './user.entity';
 import {
-  UserRepositoryPort,
+  UserRepository,
   USER_REPOSITORY_PORT,
-} from '../ports/out/user-repository.port';
+} from '../ports/out/user.repository';
 
 describe('UserService', () => {
   let service: UserService;
-  let mockUserRepository: jest.Mocked<UserRepositoryPort>;
+  let mockUserRepository: jest.Mocked<UserRepository>;
 
   beforeEach(async () => {
     mockUserRepository = {

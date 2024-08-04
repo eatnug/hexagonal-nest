@@ -1,10 +1,10 @@
-// user.repository.ts
+// user.repository.impl.ts
 import { Injectable } from '@nestjs/common';
-import { UserRepositoryPort } from '../../ports/out/user-repository.port';
+import { UserRepository } from '../../ports/out/user.repository';
 import { User } from '../../domain/user.entity';
 
 @Injectable()
-export class UserRepository implements UserRepositoryPort {
+export class UserRepositoryImpl implements UserRepository {
   private users: User[] = [];
 
   async save(user: User): Promise<User> {
